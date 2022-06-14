@@ -1,0 +1,90 @@
+.cta {
+	background: linear-gradient(to right, $white 50%, $orange 50%);
+	background-size: 205% 105%;
+	background-position: right bottom;
+	border: 0;
+	border-radius: 80px;
+	padding: 16px 48px;
+	font-family: $primary-font;
+	letter-spacing: 1.5px;
+	color: $white;
+	text-transform: uppercase;
+	cursor: pointer;
+	border: 1px solid $orange;
+	font-size: 12px;
+	margin-bottom: 1rem;
+
+	@media screen and (prefers-reduced-motion: no-preference) {
+		transition: all 0.5s ease-out;
+	}
+
+	&:hover {
+		background-position: left bottom;
+		color: $orange;
+		text-decoration: none;
+	}
+
+	&--back {
+		background: transparent;
+		background-size: 100%;
+		color: $black;
+		padding: 24px 0;
+		position: relative;
+		border: none;
+		font-size: 12px;
+
+		&:before {
+			content: '';
+			height: 1px;
+			width: 100%;
+			background-color: $black;
+			bottom: 18px;
+			left: 0;
+			position: absolute;
+		}
+
+		&:after {
+			content: '';
+			height: 1px;
+			width: 0%;
+			background-color: $orange;
+			bottom: 18px;
+			left: 0;
+			position: absolute;
+			
+			@media screen and (prefers-reduced-motion: no-preference) {
+				transition: all 0.3s ease-out;
+			}
+
+		}
+		
+
+		&:hover {
+			color: $orange;
+
+			&:after {
+				width: 100%;
+			}
+		}
+
+	}
+
+	&.remove {
+		color: $text-grey;	
+		font-size: 10px;
+		padding: 8px 0;
+
+		&:before {
+			background-color: $text-grey;
+			bottom: 5px;
+		}
+
+		&:after {
+			bottom: 5px;
+		}
+
+		&:hover {
+			color: $orange;
+		}
+	}
+}

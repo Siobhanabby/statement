@@ -1,0 +1,56 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8%;
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+
+	.inactive & {
+		position: fixed;
+	}
+
+	.logo {
+		width: 100px;
+	}
+
+	.cart {
+		width: 20px;
+		cursor: pointer;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $black;
+		border: none;
+		background: none;
+		padding: 0;
+
+		@media screen and (prefers-reduced-motion: no-preference) {
+			transition: all 0.3s ease-out;
+		}
+
+		.counter {
+			position: absolute;
+			top: 7px;
+			font-family: $primary-font;
+			font-size: 12px;
+		}
+
+		&:hover {
+			color: $orange;
+		}
+	}
+}
+
+@media (min-width: $phone-breakpoint){
+	header {
+		padding: 40px;
+		width: 100%;
+
+		.logo {
+			width: 150px;
+		}
+	}
+}
